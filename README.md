@@ -4,3 +4,16 @@ This is the final project for my CIS-171 Java course at Kirkwood Community Colle
 
 ## Introduction
 
+In the introduction of **Java CIS-171** we setup and learned how to use a program called Git to upload files to GitHub. Additionally, we learned how to use markdown. Learning how to use Git was entirely new to me, but I already had quite a bit of expereince using markdown. Although I did learn a few new things in class about markdown such as embeding images in a file like so:
+
+![Kirkwood Community College](https://www.kirkwood.edu/images/cehomepage/ceheader_kirkwood.png)
+
+
+instructions for uploading to GitHub
+
+1. git add [filename] README.md
+1. git status
+1. git commit -m "changes made to files"
+1. git push origin main
+
+
