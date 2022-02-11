@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class Chapter1 implements TaskHandler {
     @Override
     public void handleTask(Scanner in) {
@@ -35,17 +36,44 @@ public class Chapter1 implements TaskHandler {
 
     public void exercise1(Scanner in) {
         UIUtility.showMenuTitle("Exercise 1");
-        // Your code here
+
+        double numOne = InputUtility.getDouble("Enter a Number", in);
+        double numTwo = InputUtility.getDouble("Enter another Number", in);
+
+        if(numOne > numTwo) {
+            System.out.println("Largest is: " + numOne);
+        }
+        else if(numTwo > numOne) {
+            System.out.println("Largest is: " + numTwo);
+        }
+        else {
+            System.out.println("Largest is: " + numOne);
+        }
     }
 
     public void exercise2(Scanner in) {
         UIUtility.showMenuTitle("Exercise 2");
-        // Your code here
+        
+        double numOne = InputUtility.getDouble("Enter a Number", in);
+        double numTwo = InputUtility.getDouble("Enter another Number", in);
+
+        double numAvg = (numOne + numTwo) / 2;
+        
+        System.out.printf("%.1f", numAvg);
     }
 
     public void exercise3(Scanner in) {
         UIUtility.showMenuTitle("Exercise 3");
-        // Your code here
+        
+        final double pi = Math.PI;
+    
+        double radius = InputUtility.getDouble("Enter the radius", in);
+        
+        double circumCalc = 2 * (pi * radius);
+        double circleArea = pi * Math.pow(radius, 2);
+        
+        System.out.printf("Circumference: %.2f\nArea: %.2f\n", circumCalc, circleArea);
+
     }
 
     public void sampleExercise(Scanner in) {
