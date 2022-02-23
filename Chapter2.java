@@ -38,7 +38,7 @@ public class Chapter2 implements TaskHandler {
 
 
 
-    public void exercise1(Scanner in) {
+    public void exercise1(Scanner in) { // determines whether an integer is even or odd
         UIUtility.showMenuTitle("Exercise 1");
         
         int isEven = InputUtility.getInt("Enter a Number", in);
@@ -50,7 +50,7 @@ public class Chapter2 implements TaskHandler {
         }
     }
 
-    public void exercise2(Scanner in) {
+    public void exercise2(Scanner in) { // seperates whole values and decimal values; prints them on seperate lines
         UIUtility.showMenuTitle("Exercise 2");
         
         double userNum = InputUtility.getDouble("Please input a decimal number.", in);
@@ -60,7 +60,7 @@ public class Chapter2 implements TaskHandler {
 
     }
 
-    public void exercise3(Scanner in) {
+    public void exercise3(Scanner in) { // is prime
         UIUtility.showMenuTitle("Exercise 3");
         for(int i = 2; i <= 100; i++) {
             int k = 0;
@@ -75,7 +75,7 @@ public class Chapter2 implements TaskHandler {
         }   
     }
 
-    public void exercise4(Scanner in) {
+    public void exercise4(Scanner in) { // program to find number of days, hours, minutes, and seconds from an inputed number of seconds
         UIUtility.showMenuTitle("Exercise 4");
         
         int userSec = InputUtility.getInt("Enter a number for seconds", in);
