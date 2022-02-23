@@ -20,3 +20,7 @@ instructions for uploading to GitHub
 ## Chapter 1
 
 in Chapter 1 of **Java CIS-171** we learned about some of the java fundamentals. this includes things like basic arithmetic operators, boolean operators, conditional statements, try/catch statements, for loops, using the Scanner class to get input, etc. . This all came quite easily to me, as I am already quite familiar with Java. 
+
+## Chapter 2
+
+in Chapter 2, titled "Data Types and Operators, of **Java CIS-171** we went over a variety of things, the most notable among them are; the Math class, char data type, boolean data type, escape characters, modular division, logical operators, and casting. These topics weren't particularly difficult for me to understand as I've previously learned them.
