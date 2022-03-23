@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class Chapter3 implements TaskHandler {
     @Override
@@ -39,11 +41,65 @@ public class Chapter3 implements TaskHandler {
     public void exercise1(Scanner in) { 
         UIUtility.showMenuTitle("Exercise 1");
 
+        int userNumA = InputUtility.getInt("Enter two numbers: ", in);
+        int userNumB = InputUtility.getInt("", in);
+
+        
+        if(userNumB < userNumA) {
+            int tempNum = userNumB;
+            userNumB = userNumA;
+            userNumA = tempNum;
+        }
+
+        for(int i = userNumA; i < userNumB; i++) {
+            if(i % userNumB == 0) {
+                break;
+            }
+            if(i % 2 == 0) {
+                System.out.println(i);
+            }
+
+        }
+        
+
     }
 
-    public void exercise2(Scanner in) {
+    public void exercise2(Scanner in) { // not the most efficient way to do this, but I wanted to use ArrayLists :)
         UIUtility.showMenuTitle("Exercise 2");
+        ArrayList<Integer> aryLst = new ArrayList<Integer>();
 
+        System.out.println("Enter some numbers (enter \"S\" to stop):");
+
+        while(true) {
+            String userInput = InputUtility.getString("", in);
+
+            try{
+                if(userInput.toLowerCase().equals("s") || userInput.toLowerCase().equals("stop")) {
+                    break;
+                }
+                else {
+                    aryLst.add(Integer.parseInt(userInput));
+                }
+            }
+            catch(NumberFormatException e) {
+                System.out.println("Invalid input.");
+            }
+            
+        }
+
+        Collections.sort(aryLst);
+
+        int arySum = 0;
+
+        for(int i = 0; i < aryLst.size(); i++) {
+            arySum += aryLst.get(i);
+        }
+
+        double aryAvg = arySum / (double) aryLst.size();
+        int aryMax = aryLst.get(aryLst.size() - 1);
+        int aryMin = aryLst.get(0);
+
+        System.out.printf("\nSum: %d\nCount: %d\nAverage: %.2f\nHighest: %d\nLowest: %d\n", arySum, aryLst.size(), aryAvg, aryMax, aryMin);
     }
 
     public void exercise3(Scanner in) { 
