@@ -8,7 +8,7 @@ public class InputUtility {
      * @return the String entered by the user
      */
     public static String getString(String prompt, Scanner in) {
-        System.out.print(prompt + ": ");
+        System.out.print(prompt);
         return in.nextLine().trim();
     }
 
@@ -77,7 +77,7 @@ public class InputUtility {
         String input;
         boolean needed = true;
         while (needed) {
-            System.out.print(prompt + ": ");
+            System.out.print(prompt + "");
             input = in.nextLine().trim();
             try {
                 value = Integer.parseInt(input);
