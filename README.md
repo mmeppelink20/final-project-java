@@ -25,6 +25,6 @@ in Chapter 1 of **Java CIS-171** we learned about some of the java fundamentals.
 
 in Chapter 2, titled "Data Types and Operators, of **Java CIS-171** we went over a variety of things, the most notable among them are; the Math class, char data type, boolean data type, escape characters, modular division, logical operators, and casting. These topics weren't particularly difficult for me to understand as I've previously learned them.
 
-## Chapter 2
+## Chapter 3
 
-in chapter 2, titled "Control Statements" of **JAVA CIS-171** we went over several logical operators in Java. We went over ifs, elseifs, dates, switches, for loops, while loops, do while loops, nested loops, and many other things. I had no difficulty understanding these concepts, as they're all things I already had quite a lot of exposure to.
+in chapter 2, titled "Control Statements" of **JAVA CIS-171** we went over several logical operators in Java. We went over ifs, elseifs, dates, switches, for loops, while loops, do while loops, nested loops. In addition to the aforementioned, we also learned about the LocalDate class, which has to deal with formatting and using date objects and carrying out calculations using dates. Aside from the LocalDate class, which I had previously not been exposed to, I had no difficulty understanding these concepts, as they're all things I already had quite a lot of exposure to.
