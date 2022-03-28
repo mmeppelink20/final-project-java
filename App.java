@@ -7,7 +7,7 @@ public class App {
             String menuTitle = "Main Menu";
             String prompt = "Select an chapter";
             String[] menuOptions = {
-                "Chapter 1", "Chapter 2", "Chapter 3"
+                "Chapter 1", "Chapter 2", "Chapter 3", "Chapter 4"
             };
             choice = UIUtility.showMenuOptions(menuTitle, prompt, menuOptions, scanner);
             if (choice == 0)
