@@ -24,6 +24,9 @@ public class App {
                 case 3:
                     new Chapter3().handleTask(scanner);
                     break;
+                case 4:
+                    new Chapter4().handleTask(scanner);
+                    break;
 
             }
             UIUtility.pressEnterToContinue(scanner);
