@@ -25,7 +25,7 @@ class Fraction {
         return gcd.intValue();
     }
 
-    public String mixedNumber(){ 
+    public String mixedNumber() {
         String mixedNumber;
 
         Fraction fraction = simplify();
@@ -33,13 +33,24 @@ class Fraction {
         int num = fraction.getNumerator();
         int den = fraction.getDenominator();
 
-        //TODO
+        int mix = num / den;
 
-        
+        if (num % den != 0) {
+            fraction.setNumerator(Math.abs(num) % den);
 
-        
+            if (mix != 0) {
+                mixedNumber = Integer.toString(mix) + " " + fraction.toString();
+            } else {
+                mixedNumber = fraction.toString();
+            }
+
+        } else {
+            mixedNumber = Integer.toString(mix);
+        }
+
         return mixedNumber;
     }
+
     public Fraction simplify() {
         Fraction simplified = new Fraction(numerator, denominator);
 
@@ -179,7 +190,6 @@ public class Chapter4 implements TaskHandler {
 
         try {
             Fraction fraction = new Fraction(3, 0);
-            int i = 0;
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
@@ -227,7 +237,34 @@ public class Chapter4 implements TaskHandler {
 
     public void exercise6(Scanner in) {
         UIUtility.showMenuTitle("Exercise 6");
-        
+
+        Fraction fraction1 = new Fraction(4, 1);
+        System.out.println("Expected: 4: " + fraction1.mixedNumber());
+
+        Fraction fraction2 = new Fraction(0, 4);
+        System.out.println("Expected: 0: " + fraction2.mixedNumber());
+
+        Fraction fraction3 = new Fraction(4, 4);
+        System.out.println("Expected: 1: " + fraction3.mixedNumber());
+
+        Fraction fraction4 = new Fraction(8, 4);
+        System.out.println("Expected: 2: " + fraction4.mixedNumber());
+
+        Fraction fraction5 = new Fraction(4, 8);
+        System.out.println("Expected: 1/2: " + fraction5.mixedNumber());
+
+        Fraction fraction6 = new Fraction(13, 5);
+        System.out.println("Expected: 2 3/5: " + fraction6.mixedNumber());
+
+        Fraction fraction7 = new Fraction(-13, 5);
+        System.out.println("Expected:-2 3/5:" + fraction7.mixedNumber());
+
+        Fraction fraction8 = new Fraction(13, -5);
+        System.out.println("Expected:-2 3/5:" + fraction8.mixedNumber());
+
+        Fraction fraction9 = new Fraction(-13, -5);
+        System.out.println("Expected: 2 3/5: " + fraction9.mixedNumber());
+
     }
 
     public void exercise7(Scanner in) {
