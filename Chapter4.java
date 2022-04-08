@@ -75,6 +75,18 @@ class Fraction {
         return simplified;
     }
 
+    public String add(Fraction other) {
+        String fractionSum = null;
+
+        Fraction fraction = new Fraction((numerator * other.getDenominator()) + (other.getNumerator() * denominator),
+                denominator * other.getDenominator());
+
+        fractionSum = mixedNumber().toString() + " + " + other.mixedNumber().toString() + " = "
+                + fraction.mixedNumber().toString();
+
+        return fractionSum;
+    }
+
     @Override
     public String toString() {
         String fraction;
@@ -187,12 +199,13 @@ public class Chapter4 implements TaskHandler {
 
     public void exercise3(Scanner in) {
         UIUtility.showMenuTitle("Exercise 3");
-
+        
         try {
             Fraction fraction = new Fraction(3, 0);
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
+        
 
         Fraction fraction = new Fraction();
 
@@ -269,10 +282,51 @@ public class Chapter4 implements TaskHandler {
 
     public void exercise7(Scanner in) {
         UIUtility.showMenuTitle("Exercise 7");
+
+        Fraction fraction = new Fraction(13, 5);
+        Fraction other = new Fraction(4, 8);
+        System.out.println("Expected: 2 3/5 + 1/2 = 3 1/10\n  Output: " + fraction.add(other));
+
+        Fraction fraction1 = new Fraction(-13, -5);
+        Fraction other1 = new Fraction(13, -5);
+        System.out.println("Expected: 2 3/5 + -2 3/5 = 0\n  Output: " + fraction1.add(other1));
+
     }
 
     public void exercise8(Scanner in) {
         UIUtility.showMenuTitle("Exercise 8");
+
+        while (true) {
+
+            int a, b;
+            int c, d;
+
+            Fraction fraction1 = null;
+            Fraction fraction2 = null;
+
+            a = InputUtility.getInt("Enter the first numerator: ", in);
+            b = InputUtility.getInt("Enter the first denominator: ", in);
+
+            c = InputUtility.getInt("Enter the second numerator: ", in);
+            d = InputUtility.getInt("Enter the second denominator: ", in);
+
+            try {
+                fraction1 = new Fraction(a, b);
+                fraction2 = new Fraction(c, d);
+            } catch (IllegalArgumentException e) {
+                System.out.println("\n" + e.getMessage() + "\nType anything to try again; type \"s\" or \"stop\" to stop...");
+
+                String userInput = InputUtility.getString("", in);
+                if (userInput.toLowerCase().equals("s") || userInput.toLowerCase().equals("stop")) {
+                    return;
+                } else {
+                    exercise8(in);
+                }
+            }
+
+            System.out.println(fraction1.add(fraction2));
+            break;
+        }
     }
 
 }
