@@ -1,5 +1,10 @@
+package src.chapter_assignments;
 import java.math.BigInteger;
 import java.util.Scanner;
+
+import src.utilities.InputUtility;
+import src.utilities.TaskHandler;
+import src.utilities.UIUtility;
 
 class Fraction {
 

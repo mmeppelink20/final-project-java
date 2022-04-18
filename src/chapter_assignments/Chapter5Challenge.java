@@ -1,4 +1,10 @@
+package src.chapter_assignments;
 import java.util.Scanner;
+
+import src.utilities.InputUtility;
+import src.utilities.TaskHandler;
+import src.utilities.UIUtility;
+
 import java.util.Arrays;
 
 public class Chapter5Challenge implements TaskHandler {

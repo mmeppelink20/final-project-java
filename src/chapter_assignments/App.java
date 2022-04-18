@@ -1,4 +1,7 @@
+package src.chapter_assignments;
 import java.util.Scanner;
+
+import src.utilities.UIUtility;
 public class App {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
