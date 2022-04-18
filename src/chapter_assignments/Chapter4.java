@@ -1,4 +1,5 @@
 package src.chapter_assignments;
+
 import java.math.BigInteger;
 import java.util.Scanner;
 
@@ -204,13 +205,12 @@ public class Chapter4 implements TaskHandler {
 
     public void exercise3(Scanner in) {
         UIUtility.showMenuTitle("Exercise 3");
-        
+
         try {
-            Fraction fraction = new Fraction(3, 0);
+            new Fraction(3, 0);
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
-        
 
         Fraction fraction = new Fraction();
 
@@ -319,7 +319,8 @@ public class Chapter4 implements TaskHandler {
                 fraction1 = new Fraction(a, b);
                 fraction2 = new Fraction(c, d);
             } catch (IllegalArgumentException e) {
-                System.out.println("\n" + e.getMessage() + "\nType anything to try again; type \"s\" or \"stop\" to stop...");
+                System.out.println(
+                        "\n" + e.getMessage() + "\nType anything to try again; type \"s\" or \"stop\" to stop...");
 
                 String userInput = InputUtility.getString("", in);
                 if (userInput.toLowerCase().equals("s") || userInput.toLowerCase().equals("stop")) {
