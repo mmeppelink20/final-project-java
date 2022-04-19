@@ -32,3 +32,7 @@ in chapter 3, titled "Control Statements" of **JAVA CIS-171** we went over sever
 ## Chapter 4
 
 in chapter 4, titled "Classes, Objects, and Methods" of **JAVA CIS-171** we discussed the aforementioned, as well as things related to these topics; such things included: reference variables and assignments, methods, return values, method parameters, method return types, constructuors, parameterized constructors, public and private access levels, accessor methods, and how to create objects. I had no difficulty understanding these concepts, as they're all things I already had quite a lot of exposure to or had learned in a previous or concurrent class.
+
+## Chapter 5
+
+In chapter 5, titled "Arrays and String Operators" of **JAVA CIS-171** we learned about one dimensional arrays, max and vin value in an array, ArrayIndexOutOfBoundsException, touched on various sorting algorithms with focus on the bubble sort, found the mean, meadian and mode of an array, two dimensional arrays, how array copies work, for-each loops, search algorithms, String arrays, and the ternary operator. I had previous exposure exposure to all of these concepts except search algorithms and the ternary operator. I'm not really a huge fan of the ternary operator as I thinks it's a little overly copmlicated, and harder to read than its counterparts.
