@@ -34,6 +34,51 @@ public class Chapter5 implements TaskHandler {
         System.out.println("\nExiting Chapter 5 Menu.");
     }
 
+    public String stringReverse(String string) {
+        String reverseString = "";
+
+        for (int i = string.length() - 1; i >= 0; i--){
+            reverseString += string.charAt(i);
+        }
+
+        return reverseString;
+    }
+
+    public Boolean isPalindrome(String string) {
+        Boolean result = false;
+
+        string = string.replaceAll(" ", "");
+        string = string.toLowerCase();
+        
+        if(string.equals(stringReverse(string))){
+            result = true;
+        }
+
+        return result;
+    }
+
+    public ArrayList<Object> stringStats(String string) {
+        ArrayList<Object> stringStatsList = new ArrayList<Object>();
+        String firstThreeChars = "";
+        
+        if(string.length() - 1 > 3){
+            for (int i = 0; i < 3; i++){
+                firstThreeChars += string.charAt(i);
+            }
+        } else {
+            firstThreeChars = string;
+        }
+
+        stringStatsList.add(string.length());
+        stringStatsList.add(firstThreeChars);
+        stringStatsList.add(String.valueOf(string.charAt(string.length() - 1) ));
+        stringStatsList.add(string.contains("i"));
+        stringStatsList.add(string.toLowerCase());
+        stringStatsList.add(isPalindrome(string));
+
+        return stringStatsList;
+    }
+
     public void exercise1(Scanner in) {
         UIUtility.showMenuTitle("Exercise 1");
 
@@ -60,6 +105,33 @@ public class Chapter5 implements TaskHandler {
 
     public void exercise2(Scanner in) {
         UIUtility.showMenuTitle("Exercise 2");
+
+        String userStrOne = InputUtility.getString("Enter a string: \n", in);
+        String userStrTwo = InputUtility.getString("Enter another string: \n", in);
+
+        ArrayList<Object> stringStatsList = new ArrayList<Object>();
+
+        System.out.println();
+
+        stringStatsList = stringStats(userStrOne);
+        System.out.println("Length: " + stringStatsList.get(0) + 
+                           "\nFirst 3 characters: " + stringStatsList.get(1) + 
+                           "\nLast character: " + stringStatsList.get(2) + 
+                           "\nContains the letter i: " + stringStatsList.get(3) + 
+                           "\nLowercase: " + stringStatsList.get(4) + 
+                           "\nIs a palindrome: " + stringStatsList.get(5)
+                          );
+
+        System.out.println();
+
+        stringStatsList = stringStats(userStrTwo);
+        System.out.println("Length: " + stringStatsList.get(0) + 
+                           "\nFirst 3 characters: " + stringStatsList.get(1) + 
+                           "\nLast character: " + stringStatsList.get(2) + 
+                           "\nContains the letter i: " + stringStatsList.get(3) + 
+                           "\nLowercase: " + stringStatsList.get(4) + 
+                           "\nIs a palindrome: " + stringStatsList.get(5)
+                          );
 
     }
 
