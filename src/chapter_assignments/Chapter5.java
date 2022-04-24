@@ -133,6 +133,12 @@ public class Chapter5 implements TaskHandler {
                            "\nIs a palindrome: " + stringStatsList.get(5)
                           );
 
+        if (userStrOne.compareToIgnoreCase(userStrTwo) < 0) {
+            System.out.println("\"" + userStrOne + "\" " + "comes alphabetically before " + userStrTwo + "\"");
+        } else {
+            System.out.println("\"" + userStrTwo + "\" " + "comes alphabetically before " + "\"" + userStrOne + "\"");
+        }
+ 
     }
 
 }
