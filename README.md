@@ -37,12 +37,6 @@ in chapter 4, titled "Classes, Objects, and Methods" of **JAVA CIS-171** we disc
 
 In chapter 5, titled "Arrays and String Operators" of **JAVA CIS-171** we learned about one dimensional arrays, max and vin value in an array, ArrayIndexOutOfBoundsException, touched on various sorting algorithms with focus on the bubble sort, found the mean, meadian and mode of an array, two dimensional arrays, how array copies work, for-each loops, search algorithms, String arrays, and the ternary operator. I had previous exposure exposure to all of these concepts except search algorithms and the ternary operator. I'm not really a huge fan of the ternary operator as I thinks it's a little overly copmlicated, and harder to read than its counterparts.
 
-+Star ship    | 
-|---------|
--shipType: String<br>-maxSpeed: Double<br>-hyperDrive: Bool|
-<<create>> +StarShip()<br><<create>> +StarShip(shipType: String, maxSpeed: Double, hyperDrive: Bool)<br>+getShipType(): String<br>+setShipType(shipType: String): void<br>-validateShipType(shipType: string): void<br>+getMaxSpeed(): Double<br>+setMaxSpeed(maxSpeed: Double): void<br>-validateMaxSpeed(maxSpeed: Double): void<br>+isHyperDrive(): Bool<br>+setHyperDrive(hyperDrive: Bool): void<br>+toString(): String<br>+compareTo(other: StarShip): int|
-
-
 
 +Airplane |
 |---------|
