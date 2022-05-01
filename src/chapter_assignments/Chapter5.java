@@ -132,6 +132,7 @@ public class Chapter5 implements TaskHandler {
                            "\nLowercase: " + stringStatsList.get(4) + 
                            "\nIs a palindrome: " + stringStatsList.get(5)
                           );
+        System.out.println(Math.pow(5, 4));
 
         if (userStrOne.compareToIgnoreCase(userStrTwo) < 0) {
             System.out.println("\"" + userStrOne + "\" " + "comes alphabetically before " + userStrTwo + "\"");
