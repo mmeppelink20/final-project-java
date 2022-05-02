@@ -32,6 +32,7 @@ public class Ui {
                     hanger.sortHanger();
                     break;
                 case 4:
+                    hanger.updatePlane(scanner);
                     break;
                 case 5:
                     hanger.removePlane(scanner);

@@ -183,16 +183,85 @@ public class Hanger {
     }
 
     public void removePlane(Scanner in) {
-        int planeToRemove = InputUtility.getIntInRange("Enter a plane number to be removed", 0, airplanes.length, in);
+        int planeToRemove = InputUtility.getIntInRange("Enter a plane number to be removed: ", 1, airplaneCount, in);
 
-        airplanes[planeToRemove - 1] = airplanes[airplaneCount];
-        airplanes[airplaneCount] = null;
+        airplanes[planeToRemove - 1] = airplanes[airplaneCount - 1];
+        airplanes[airplaneCount - 1] = null;
 
         airplaneCount--;
 
     }
 
-    public void updatePlane() {
+    public void updatePlane(Scanner in) {
+        String menuTitle = "Update a plane";
+        String prompt = "Select a plane";
+        String[] menuOptions = new String[airplaneCount];
+        for(int i = 0; i < airplaneCount; i++) {
+            menuOptions[i] = airplanes[i].toString();
+        }
+        int choice = UIUtility.showMenuOptions(menuTitle, prompt, menuOptions, in);
+        if(choice < 1 || choice > menuOptions.length) {
+            System.out.println("Exiting update method");
+            return;
+        }
+        Airplane airplane = airplanes[choice - 1];
 
+        Manufacturer manufacturer = new Manufacturer();
+        while(true) {
+            String airplaneName = InputUtility.getString("Update plane name? [Press enter to keep '"+ airplane.getAirplaneName() +"']", in);
+            if(airplaneName.equals("")) {
+                break;
+            }
+            try {
+                airplane.setAirplaneName(airplaneName);
+                break;
+            } catch(IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        
+        while (true) {
+            String manufacturerName = InputUtility.getString("Update manufacturer?[Press enter to keep '"+ airplane.getAirplaneManufacturer() +"']", in);
+            
+            if(manufacturerName.equals("")) {
+                break;
+            }
+            try {
+                manufacturer.setManufacturer(manufacturerName);
+                airplane.setAirplaneManufacturer(manufacturer);
+                break;
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+
+        while(true) {
+            String airplaneSpeed = InputUtility.getString("Update plane speed? [Press enter to keep '"+ airplane.getMaxAirSpeed() +"']", in);
+            if(airplaneSpeed.equals("")) {
+                break;
+            }
+            try {
+                airplane.setMaxAirspeed(Integer.parseInt(airplaneSpeed));
+                break;
+            } catch(IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+
+        if(airplane instanceof FighterJet) {
+            FighterJet fighterJet = (FighterJet) airplanes[choice - 1];
+            while(true) {
+                String fighterJetMissileCount = InputUtility.getString("Update number of  missiles? [Press enter to keep '"+ fighterJet.getMissileCount() +"']", in);
+                if(fighterJetMissileCount.equals("")) {
+                    break;
+                }
+                try {
+                    fighterJet.setNumMissiles(Integer.parseInt(fighterJetMissileCount));
+                    break;
+                } catch(IllegalArgumentException e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+        }
     }
 }
