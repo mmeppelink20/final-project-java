@@ -251,6 +251,7 @@ public class Chapter4 implements TaskHandler {
 
         Fraction fraction6 = new Fraction(-2, -4);
         System.out.println("Expected: 1/2: " + fraction6.simplify().toString());
+        
     }
 
     public void exercise6(Scanner in) {
@@ -282,6 +283,9 @@ public class Chapter4 implements TaskHandler {
 
         Fraction fraction9 = new Fraction(-13, -5);
         System.out.println("Expected: 2 3/5: " + fraction9.mixedNumber());
+
+        Fraction fraction10 = new Fraction(-2, 3);
+        System.out.println("Expected: -2/3: " + fraction10.mixedNumber());
 
     }
 

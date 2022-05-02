@@ -1,28 +1,47 @@
 package src.final_assignment;
-
 import java.util.Scanner;
 
+import src.utilities.UIUtility;
 public class Ui {
-    public static void main(String[] args) {
-        // was only shooting for the minimum here...
+    public static void main(String[] args) throws Exception {
+        Scanner scanner = new Scanner(System.in);
         Hanger hanger = new Hanger();
-        
-        Scanner in = new Scanner(System.in);
+        int choice = 0;   
+        while (true) {
+            String menuTitle = "Main Menu";
+            String prompt = "Select an option\n";
+            String[] menuOptions = {
+                "Add a plane", "View planes", "Sort planes", "Update a plane", "", 
+                ""
+            };
 
-        hanger.add(in);
+            choice = UIUtility.showMenuOptions(menuTitle, prompt, menuOptions, scanner);
+            if (choice == 0)
+                continue;
+            if (choice == menuOptions.length + 1)
+                break;
 
-        hanger.printHanger();
+            switch (choice) {
+                case 1:
+                    hanger.add(scanner);
+                    break;
+                case 2:
+                    hanger.printHanger();
+                    break;
+                case 3:
+                    hanger.sortHanger();
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
 
-        hanger.sortHanger();
-        System.out.println("HANGER SORTED");
-
-        hanger.removePlane(in);
-        hanger.printHanger();
-
-        System.out.println("DELETE A PLANE");
-        hanger.printHanger();
-
-    
-
-    }
+            }
+            UIUtility.pressEnterToContinue(scanner);
+        }
+       System.out.println("\nProgram complete. Goodbye.\n");
+       scanner.close();
+    }   
 }

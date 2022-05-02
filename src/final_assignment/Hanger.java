@@ -11,10 +11,10 @@ public class Hanger {
 
     public Hanger() {
 
+        airplanes[airplaneCount++] = new FighterJet("F-22 Raptor", 8, 1500, new Manufacturer("Lockheed Martin"));
         airplanes[airplaneCount++] = new FighterJet("F-14 Tomcat", 6, 1544, new Manufacturer("Northrop Grumman"));
         airplanes[airplaneCount++] = new FighterJet("F-16 Fighting Falcon", 6, 1350,
                 new Manufacturer("General Dynamics"));
-        airplanes[airplaneCount++] = new FighterJet("F-22 Raptor", 8, 1500, new Manufacturer("Lockheed Martin"));
         airplanes[airplaneCount++] = new FighterJet("F-4 Phantom II", 8, 1473, new Manufacturer("McDonnell Douglas"));
         airplanes[airplaneCount] = new Airplane();
     }
@@ -161,30 +161,32 @@ public class Hanger {
             System.out.println("\nNo planes can be added to the hanger\n");
         }
 
-        // if the array is full, tell the user you can't add any more
     }
 
     public void printHanger() {
-        for (int i = 0; i < airplanes.length; i++) {
-            if (airplanes[i] == null) {
-                System.out.println("Slot " + (i + 1) + "\n" + "Empty");
-            } else {
-                System.out.println("Slot " + (i + 1) + "\n" + airplanes[i]);
-            }
+        for (int i = 0; i < airplaneCount; i++) {
+            System.out.println(airplanes[i]);
         }
     }
 
     public void sortHanger() {
         Airplane tempAirplane = new Airplane();
 
-        for (int i = 0; i <= airplanes.length; i++) {
-            for (int j = 0; j < airplanes.length - 1; j++) {
-                if (airplanes[j].compareTo(airplanes[j + 1]) > 0) {
-                    tempAirplane = airplanes[j];
-                    airplanes[j] = airplanes[j + 1];
-                    airplanes[j + 1] = tempAirplane;
+        Airplane[] airplanesCopy = airplanes.clone();
+
+
+        for (int i = 0; i <= airplaneCount; i++) {
+            for (int j = 0; j < airplaneCount - 1; j++) {
+                if (airplanesCopy[j].compareTo(airplanesCopy[j + 1]) > 0) {
+                    tempAirplane = airplanesCopy[j];
+                    airplanesCopy[j] = airplanesCopy[j + 1];
+                    airplanesCopy[j + 1] = tempAirplane;
                 }
             }
+        }
+
+        for (int i = 0; i < airplaneCount; i++) {
+            System.out.println(airplanesCopy[i]);
         }
     }
 
@@ -193,5 +195,9 @@ public class Hanger {
 
         airplanes[planeToRemove - 1] = null;
 
+    }
+
+    public void updatePlane() {
+        
     }
 }
