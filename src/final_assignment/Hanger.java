@@ -16,15 +16,12 @@ public class Hanger {
         airplanes[airplaneCount++] = new FighterJet("F-16 Fighting Falcon", 6, 1350,
                 new Manufacturer("General Dynamics"));
         airplanes[airplaneCount++] = new FighterJet("F-4 Phantom II", 8, 1473, new Manufacturer("McDonnell Douglas"));
-        airplanes[airplaneCount] = new Airplane();
     }
 
     public boolean isFull() {
         Boolean result = false;
-        for (int i = 0; i < airplanes.length; i++) {
-            if (airplanes[i].getAirplaneName().equals("Empty")) {
-                result = true;
-            }
+        if (airplaneCount < 5) {
+            result = true;
         }
         return result;
     }
@@ -86,11 +83,7 @@ public class Hanger {
                         System.out.println(e.getMessage());
                     }
                 }
-                for(int i = 0; i < airplanes.length - 1; i++) {
-                    if(airplanes[i].getAirplaneName().equals("Empty")){
-                        airplanes[i] = airplane;
-                    }
-                }
+
             } else {
 
                 fighterJet.setAirplaneName(fighterJet.toString());
@@ -174,7 +167,6 @@ public class Hanger {
 
         Airplane[] airplanesCopy = airplanes.clone();
 
-
         for (int i = 0; i <= airplaneCount; i++) {
             for (int j = 0; j < airplaneCount - 1; j++) {
                 if (airplanesCopy[j].compareTo(airplanesCopy[j + 1]) > 0) {
@@ -191,13 +183,16 @@ public class Hanger {
     }
 
     public void removePlane(Scanner in) {
-        int planeToRemove = InputUtility.getIntInRange("Enter a plane number to be removed", 0, airplanes.length , in);
+        int planeToRemove = InputUtility.getIntInRange("Enter a plane number to be removed", 0, airplanes.length, in);
 
-        airplanes[planeToRemove - 1] = null;
+        airplanes[planeToRemove - 1] = airplanes[airplaneCount];
+        airplanes[airplaneCount] = null;
+
+        airplaneCount--;
 
     }
 
     public void updatePlane() {
-        
+
     }
 }
