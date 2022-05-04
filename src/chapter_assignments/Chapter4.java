@@ -42,7 +42,7 @@ class Fraction {
         int mix = num / den;
 
         if (num % den != 0) {
-            fraction.setNumerator(Math.abs(num) % den);
+            fraction.setNumerator((num) % den);
 
             if (mix != 0) {
                 mixedNumber = Integer.toString(mix) + " " + fraction.toString();
