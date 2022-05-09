@@ -37,6 +37,15 @@ in chapter 4, titled "Classes, Objects, and Methods" of **JAVA CIS-171** we disc
 
 In chapter 5, titled "Arrays and String Operators" of **JAVA CIS-171** we learned about one dimensional arrays, max and vin value in an array, ArrayIndexOutOfBoundsException, touched on various sorting algorithms with focus on the bubble sort, found the mean, meadian and mode of an array, two dimensional arrays, how array copies work, for-each loops, search algorithms, String arrays, and the ternary operator. I had previous exposure exposure to all of these concepts except search algorithms and the ternary operator. I'm not really a huge fan of the ternary operator as I thinks it's a little overly copmlicated, and harder to read than its counterparts.
 
+## User Stories
+
+- As a logistics officer, I want to be able to add a plane to the hanger
+- As a logistics officer, I want to be able to view all of the planes in the hanger
+- As a logistics officer, I want to view a sorted list of all planes
+- As a logistics officer, I want to be able to update things about a plane (MVP)
+-As a logistics officer, I want to be able to remove a from the hanger.
+- As a logistics officer, I want to be able to move a plane to a new location in the hanger
+- As a logistics officer, I want to be able to swap the location of two planes.
 
 +Airplane |
 |---------|
