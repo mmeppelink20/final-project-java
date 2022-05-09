@@ -43,7 +43,7 @@ In chapter 5, titled "Arrays and String Operators" of **JAVA CIS-171** we learne
 - As a logistics officer, I want to be able to view all of the planes in the hanger
 - As a logistics officer, I want to view a sorted list of all planes
 - As a logistics officer, I want to be able to update things about a plane (MVP)
--As a logistics officer, I want to be able to remove a from the hanger.
+- As a logistics officer, I want to be able to remove a from the hanger.
 - As a logistics officer, I want to be able to move a plane to a new location in the hanger
 - As a logistics officer, I want to be able to swap the location of two planes.
 
