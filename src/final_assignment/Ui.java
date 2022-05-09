@@ -11,8 +11,7 @@ public class Ui {
             String menuTitle = "Main Menu";
             String prompt = "Select an option\n";
             String[] menuOptions = {
-                "Add a plane", "View planes", "Sort planes", "Update a plane", "Remove a plane", 
-                ""
+                "Add a plane", "View planes", "Sort planes", "Update a plane", "Remove a plane", "Swap planes", 
             };
 
             choice = UIUtility.showMenuOptions(menuTitle, prompt, menuOptions, scanner);
@@ -38,6 +37,9 @@ public class Ui {
                     hanger.removePlane(scanner);
                     break;
                 case 6:
+                    hanger.swapPlane(scanner);
+                    break;
+                case 7:
                     break;
 
             }

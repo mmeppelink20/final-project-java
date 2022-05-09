@@ -12,7 +12,7 @@ public class Hanger {
     public Hanger() {
 
         airplanes[airplaneCount++] = new FighterJet("F-22 Raptor", 8, 1500, new Manufacturer("Lockheed Martin"));
-        airplanes[airplaneCount++] = new FighterJet("F-14 Tomcat", 6, 1544, new Manufacturer("Northrop Grumman"));
+        airplanes[airplaneCount++] = new FighterJet("Su-57", 6, 1324, new Manufacturer("Sukhoi"));
         airplanes[airplaneCount++] = new FighterJet("F-16 Fighting Falcon", 6, 1350,
                 new Manufacturer("General Dynamics"));
         airplanes[airplaneCount++] = new FighterJet("F-4 Phantom II", 8, 1473, new Manufacturer("McDonnell Douglas"));
@@ -84,7 +84,7 @@ public class Hanger {
                     }
                 }
 
-            } else {
+            } else if(type.equalsIgnoreCase("Fighter Jet")) {
 
                 fighterJet.setAirplaneName(fighterJet.toString());
                 while (true) {
@@ -145,11 +145,15 @@ public class Hanger {
 
             if (type.equalsIgnoreCase("Regular")) {
                 airplanes[airplaneCount++] = airplane;
+                UIUtility.showMenuTitle("Plane added to the hanger");
             } else if (type.equalsIgnoreCase("Fighter Jet")) {
                 airplanes[airplaneCount++] = fighterJet;
+                UIUtility.showMenuTitle("Plane added to the hanger");
+            } else {
+                UIUtility.showMenuTitle("No plane added to the hanger");
             }
 
-            UIUtility.showMenuTitle("Plane added to the hanger");
+
         } else {
             System.out.println("\nNo planes can be added to the hanger\n");
         }
@@ -182,10 +186,20 @@ public class Hanger {
         }
     }
 
-    public void removePlane(Scanner in) {
-        int planeToRemove = InputUtility.getIntInRange("Enter a plane number to be removed: ", 1, airplaneCount, in);
+    public void removePlane(Scanner in) {        
+        String menuTitle = "Remove a plane";
+        String prompt = "Select a plane";
+        String[] menuOptions = new String[airplaneCount];
+        for(int i = 0; i < airplaneCount; i++) {
+            menuOptions[i] = airplanes[i].toString();
+        }
+        int choice = UIUtility.showMenuOptions(menuTitle, prompt, menuOptions, in);
+        if(choice < 1 || choice > menuOptions.length) {
+            System.out.println("Exiting update method");
+            return;
+        }
 
-        airplanes[planeToRemove - 1] = airplanes[airplaneCount - 1];
+        airplanes[choice - 1] = airplanes[airplaneCount - 1];
         airplanes[airplaneCount - 1] = null;
 
         airplaneCount--;
@@ -263,5 +277,30 @@ public class Hanger {
                 }
             }
         }
+    }
+
+    public void swapPlane(Scanner in) {
+        String menuTitle = "Update a plane";
+        String prompt = "Select a plane to swap";
+
+        String[] menuOptions = new String[airplaneCount];
+        for(int i = 0; i < airplaneCount; i++) {
+            menuOptions[i] = airplanes[i].toString();
+        }
+        int choice = UIUtility.showMenuOptions(menuTitle, prompt, menuOptions, in);
+        if(choice < 1 || choice > menuOptions.length) {
+            System.out.println("Exiting update method");
+            return;
+        }
+        int choiceTwo = InputUtility.getIntInRange("Select a plane to swap it with: ", 0, menuOptions.length, in);
+        
+        System.out.println();
+        
+        Airplane airplane = airplanes[choice - 1];
+
+        airplanes[choice - 1] = airplanes[choiceTwo - 1];
+        airplanes[choiceTwo - 1] = airplane;
+
+        UIUtility.showMenuTitle("Planes swapped");
     }
 }
